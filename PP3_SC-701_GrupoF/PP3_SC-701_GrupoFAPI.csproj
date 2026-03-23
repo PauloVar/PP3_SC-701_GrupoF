@@ -17,8 +17,4 @@
     <ProjectReference Include="..\PP3_SC-701_GrupoFDAL\PP3_SC-701_GrupoFDAL.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
 </Project>
