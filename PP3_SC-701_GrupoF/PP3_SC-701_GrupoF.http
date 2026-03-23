@@ -1,0 +1,6 @@
+@PP3_SC_701_GrupoF_HostAddress = http://localhost:5180
+
+GET {{PP3_SC_701_GrupoF_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
