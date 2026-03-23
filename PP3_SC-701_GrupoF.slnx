@@ -1,3 +1,5 @@
 <Solution>
   <Project Path="PP3_SC-701_GrupoF/PP3_SC-701_GrupoFAPI.csproj" />
+  <Project Path="PP3_SC-701_GrupoFBLL/PP3_SC-701_GrupoFBLL.csproj" />
+  <Project Path="PP3_SC-701_GrupoFDAL/PP3_SC-701_GrupoFDAL.csproj" />
 </Solution>
