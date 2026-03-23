@@ -35,10 +35,6 @@ namespace PP3_SC_701_GrupoFAPI.Controllers
         public IActionResult GetVehiculo(int id)
         {
             var vehiculo = _vehiculoServicio.GetVehiculo(id);
-
-            if (vehiculo == null)
-                return NotFound(new { mensaje = "Vehículo no encontrado" });
-
             return Ok(vehiculo);
         }
 
@@ -56,6 +52,36 @@ namespace PP3_SC_701_GrupoFAPI.Controllers
             _vehiculoServicio.AddVehiculo(vehiculo);
 
             return Ok(new { mensaje = "Vehículo agregado correctamente" });
+        }
+
+        /// <summary>
+        /// Modifica un vehículo existente
+        /// </summary>
+        /// <param name="id">Id del vehículo a modificar</param>
+        /// <param name="vehiculo">Nuevos datos del vehículo</param>
+        /// <returns>Mensaje de confirmación</returns>
+        [HttpPut("{id}")]
+        public IActionResult UpdateVehiculo(int id, [FromBody] Vehiculo vehiculo)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            _vehiculoServicio.UpdateVehiculo(id, vehiculo);
+
+            return Ok(new { mensaje = "Vehículo actualizado correctamente" });
+        }
+
+        /// <summary>
+        /// Elimina un vehículo existente
+        /// </summary>
+        /// <param name="id">Id del vehículo a eliminar</param>
+        /// <returns>Mensaje de confirmación</returns>
+        [HttpDelete("{id}")]
+        public IActionResult DeleteVehiculo(int id)
+        {
+            _vehiculoServicio.DeleteVehiculo(id);
+
+            return Ok(new { mensaje = "Vehículo eliminado correctamente" });
         }
     }
 }
